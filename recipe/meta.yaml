@@ -1,4 +1,4 @@
-{% set version = "0.28.2" %}
+{% set version = "0.28.3" %}
 
 package:
   name: referencing
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/referencing/referencing-{{ version }}.tar.gz
-  sha256: 7af30260a7a0ece4bc24f2687a152b571f7ae61e90ca5d08fad372fe44998585
+  sha256: 2502c83c224ec5a7e4a43031e6423b339284924c00ef69eb0044c61f74f37062
 
 build:
   noarch: python
