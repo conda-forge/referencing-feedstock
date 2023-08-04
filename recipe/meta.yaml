@@ -10,8 +10,10 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  script_env:
+    - REFERENCING_SUITE=./suite
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -25,8 +27,8 @@ requirements:
     - rpds-py >=0.7.0
 
 test:
-  script_env:
-    - REFERENCING_SUITE=./suite
+  source_files:
+    - suite
   imports:
     - referencing
   commands:
