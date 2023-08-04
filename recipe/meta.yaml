@@ -10,7 +10,7 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -29,8 +29,10 @@ test:
     - referencing
   commands:
     - pip check
+    - pytest -vv --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=100
   requires:
     - pip
+    - pytest-cov
 
 about:
   home: https://github.com/python-jsonschema/referencing
