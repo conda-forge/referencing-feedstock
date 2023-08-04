@@ -25,6 +25,8 @@ requirements:
     - rpds-py >=0.7.0
 
 test:
+  script_env:
+    - REFERENCING_SUITE=./suite
   imports:
     - referencing
   commands:
