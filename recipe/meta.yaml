@@ -37,6 +37,7 @@ test:
   requires:
     - pip
     - pytest-cov
+    - pytest-subtests
 
 about:
   home: https://github.com/python-jsonschema/referencing
