@@ -5,12 +5,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/referencing/referencing-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/r/referencing/referencing-{{ version }}.tar.gz
   sha256: 25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script_env:
     - REFERENCING_SUITE=./suite
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -20,10 +20,10 @@ requirements:
     - hatch-vcs
     - hatchling
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - attrs >=22.2.0
-    - python >=3.8
+    - python >={{ python_min }}
     - rpds-py >=0.7.0
 
 test:
@@ -38,6 +38,7 @@ test:
     - pip
     - pytest-cov
     - pytest-subtests
+    - python {{ python_min }}
 
 about:
   home: https://github.com/python-jsonschema/referencing
