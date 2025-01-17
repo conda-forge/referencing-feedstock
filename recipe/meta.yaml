@@ -1,4 +1,4 @@
-{% set version = "0.36.0" %}
+{% set version = "0.36.1" %}
 
 package:
   name: referencing
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/r/referencing/referencing-{{ version }}.tar.gz
-  sha256: 246db964bb6101905167895cd66499cfb2aabc5f83277d008c52afe918ef29ba
+  sha256: ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade
 
 build:
   noarch: python
@@ -25,7 +25,7 @@ requirements:
     - attrs >=22.2.0
     - python >={{ python_min }}
     - rpds-py >=0.7.0
-    - typing_extensions
+    - typing_extensions >=4.4.0
 
 test:
   source_files:
