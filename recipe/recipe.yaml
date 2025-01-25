@@ -47,16 +47,7 @@ tests:
         - python ${{ python_min }}.*
     script:
       - export REFERENCING_SUITE=./suite || set REFERENCING_SUITE=./suite
-      - pytest
-          -vv
-          --tb=long
-          --color=yes
-          --pyargs referencing
-          --cov=referencing
-          --cov-branch
-          --cov-report=term-missing:skip-covered
-          --no-cov-on-fail
-          --cov-fail-under=99
+      - pytest -vv --tb=long --color=yes --pyargs referencing --cov=referencing --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=99
 
 about:
   summary: JSON Referencing + Python
