@@ -38,16 +38,25 @@ tests:
         - referencing
   - files:
       source:
-        - suite
+        - suite/
     requirements:
       run:
+        - jsonschema
         - pytest-cov
         - pytest-subtests
         - python ${{ python_min }}.*
     script:
       - export REFERENCING_SUITE=./suite || set REFERENCING_SUITE=./suite
-      - coverage run --source=referencing --branch -m pytest -vv --tb=long --color=yes
-      - coverage report --show-missing --skip-covered --fail-under=99
+      - pytest
+          -vv
+          --tb=long
+          --color=yes
+          --pyargs referencing
+          --cov=referencing
+          --cov-branch
+          --cov-report=term-missing:skip-covered
+          --no-cov-on-fail
+          --cov-fail-under=99
 
 about:
   summary: JSON Referencing + Python
