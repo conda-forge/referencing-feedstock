@@ -9,7 +9,7 @@ Package license: MIT
 
 Summary: JSON Referencing + Python
 
-Documentation: https://referencing.readthedocs.io
+Documentation: https://referencing.readthedocs.io/
 
 Current build status
 ====================
